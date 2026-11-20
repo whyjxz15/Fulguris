@@ -250,6 +250,9 @@ class App : Application(), SharedPreferences.OnSharedPreferenceChangeListener,
         // Set up the correct activity alias based on the incoming view action preference
         fulguris.utils.ActivityAliasManager.updateEnabledActivity(this, userPreferences.incomingViewAction)
 
+        // Sync the text selection menu alias with user preference
+        fulguris.utils.ActivityAliasManager.updateProcessTextAlias(this, userPreferences.processTextMenuEnabled)
+
         // Log build and device information
         logBuildInfo()
 
@@ -433,6 +436,11 @@ class App : Application(), SharedPreferences.OnSharedPreferenceChangeListener,
         if (key == getString(R.string.pref_key_incoming_view_action)) {
             // Update which activity/alias is enabled for handling VIEW intents
             fulguris.utils.ActivityAliasManager.updateEnabledActivity(this, userPreferences.incomingViewAction)
+        }
+
+        if (key == getString(R.string.pref_key_process_text_menu)) {
+            // Update the alias registering the app in the text selection menu
+            fulguris.utils.ActivityAliasManager.updateProcessTextAlias(this, userPreferences.processTextMenuEnabled)
         }
     }
 

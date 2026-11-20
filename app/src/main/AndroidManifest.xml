@@ -173,12 +173,6 @@
             </intent-filter>
 
             <intent-filter>
-                <action android:name="android.intent.action.PROCESS_TEXT" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <data android:mimeType="text/plain" />
-            </intent-filter>
-
-            <intent-filter>
                 <action android:name="info.guardianproject.panic.action.TRIGGER" />
 
                 <category android:name="android.intent.category.DEFAULT" />
@@ -269,12 +263,6 @@
             </intent-filter>
 
             <intent-filter>
-                <action android:name="android.intent.action.PROCESS_TEXT" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <data android:mimeType="text/plain" />
-            </intent-filter>
-
-            <intent-filter>
                 <action android:name="info.guardianproject.panic.action.TRIGGER" />
 
                 <category android:name="android.intent.category.DEFAULT" />
@@ -339,6 +327,24 @@
                 <data android:scheme="javascript" />
                 <data android:scheme="fulguris" />
 
+            </intent-filter>
+        </activity-alias>
+
+        <!--
+            Registers Fulguris in the system text selection menu (ACTION_PROCESS_TEXT).
+            Kept on an alias so it can be toggled at runtime from settings.
+            Previously declared on both MainActivity and IncognitoActivity, causing
+            two duplicate entries in the selection menu.
+        -->
+        <activity-alias
+            android:name="fulguris.alias.processText"
+            android:targetActivity="fulguris.activity.MainActivity"
+            android:exported="true"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="android.intent.action.PROCESS_TEXT" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="text/plain" />
             </intent-filter>
         </activity-alias>
 

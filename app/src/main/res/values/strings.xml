@@ -600,6 +600,9 @@
     <string name="pref_summary_ssl_error">What to do when an SSL error is detected</string>
     <string name="pref_title_incoming_url_action">Incoming link action</string>
     <string name="pref_summary_incoming_url_action">How to handle links from other apps</string>
+    <string name="pref_title_process_text_menu">Text selection menu</string>
+    <string name="pref_summary_process_text_menu_on">Show Fulguris when text is selected in other apps</string>
+    <string name="pref_summary_process_text_menu_off">Fulguris will not appear when text is selected in other apps</string>
     <string name="checkbox_remember_domain_choice">Remember for this site</string>
     <string name="pref_title_third_party_cookies">Third-party cookies</string>
     <string name="pref_summary_on_third_party_cookies">Accept cookies used to track your activities across websites</string>

@@ -59,6 +59,15 @@
             app:singleLineTitle="false"
             app:enumClassName="fulguris.enums.IncomingViewAction" />
 
+        <x.SwitchPreference
+            android:defaultValue="true"
+            app:key="@string/pref_key_process_text_menu"
+            app:title="@string/pref_title_process_text_menu"
+            app:summaryOn="@string/pref_summary_process_text_menu_on"
+            app:summaryOff="@string/pref_summary_process_text_menu_off"
+            app:icon="@drawable/ic_text_variant"
+            app:singleLineTitle="false" />
+
     </x.PreferenceCategory>
 
     <x.PreferenceCategory android:title="@string/tabs">

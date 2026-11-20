@@ -35,6 +35,7 @@ object ActivityAliasManager {
 
     private const val ALIAS_BROWSER_ACTIVITY = "fulguris.alias.default.BrowserActivity"
     private const val ALIAS_INCOGNITO_ACTIVITY = "fulguris.alias.default.IncognitoActivity"
+    private const val ALIAS_PROCESS_TEXT = "fulguris.alias.processText"
     private const val SELECT_BROWSER_ACTIVITY = "fulguris.activity.SelectBrowserActivity"
 
     /**
@@ -72,6 +73,15 @@ object ActivityAliasManager {
                 Timber.d("Enabled SelectBrowserActivity for incoming VIEW intents")
             }
         }
+    }
+
+    /**
+     * Enable/disable the alias that registers the app in the system text selection menu.
+     * The PROCESS_TEXT intent-filter lives on that alias so it can be toggled at runtime.
+     */
+    fun updateProcessTextAlias(context: Context, enabled: Boolean) {
+        Timber.d("updateProcessTextAlias: $enabled")
+        setComponentEnabled(context.packageManager, context, ALIAS_PROCESS_TEXT, enabled)
     }
 
     /**
